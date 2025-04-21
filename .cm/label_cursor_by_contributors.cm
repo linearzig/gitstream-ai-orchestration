@@ -4,7 +4,7 @@ manifest:
   version: 1.0
 
 automations:
-  cursor_genai:
+  label_cursor_contributors:
     # For all PRs authored by someone who is specified in the cursor_contributors list
     if:
       - {{ pr.author | match(list=cursor_contributors) | some }}
@@ -14,5 +14,5 @@ automations:
         args:
           label: '🤖 Cursor'
 
-cusor_contributors:
+cursor_contributors:
   - azigler
