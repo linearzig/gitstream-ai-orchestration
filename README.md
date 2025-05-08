@@ -1,119 +1,111 @@
-# 🦒 giraffes
+# 🦁🐟 lionfish
 
-[![PyPI version](https://img.shields.io/badge/pypi-v0.19.4-blue.svg)](https://pypi.org/project/giraffes/)
-[![Python versions](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue)](https://pypi.org/project/giraffes/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PyPI version](https://img.shields.io/badge/pypi-v1.0.0-orange.svg)](https://pypi.org/project/lionfish/)
+[![Python versions](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue)](https://pypi.org/project/lionfish/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-`giraffes` is a Python library for reaching high-level resources in your application stack with elegant, long-necked abstractions.
+`lionfish` is a Python library for building distributed, peer-to-peer swarm systems inspired by the invasive, yet mesmerizing, lionfish. Like their aquatic namesake, lionfish nodes are beautiful, resilient, and—if left unchecked—can take over your entire network!
 
 ## Features
 
-- 🦒 **Tall Stack Navigation**: Access resources up to 19 feet high in your architecture
-- 🔄 **SpotPattern™ Decorators**: Beautiful pattern-matching for distributed systems
-- 🌳 **Acacia-Safe Type Checking**: Herbivorous type validation that won't bite
-- 🏃 **GallopMode**: Async support with speeds up to 35mph
-- 🦒 **Herd Management**: Built-in clustering with neck-based load balancing
+- 🦁 **Venomous Gossip Protocols**: Spread state and messages through the swarm with the efficiency (and danger) of a lionfish spine.
+- 🌊 **Reef Discovery**: Dynamic peer discovery and self-organization—no central server required (because lionfish don't believe in single points of failure).
+- 🐠 **Invasive Replication**: Data and tasks propagate through the swarm faster than a lionfish in a coral reef.
+- 🎨 **Striking Consensus**: Achieve agreement with beautiful, stripey consensus algorithms (Byzantine generals, beware!).
+- 🦑 **Predator Detection**: Built-in anomaly and intrusion detection—because even lionfish have to watch out for sharks (and rogue nodes).
 
 ## Installation
 
 ```bash
-pip install giraffes
+pip install lionfish
 ```
 
 ## Quick Start
 
 ```python
-from giraffes import Neck, Herd
-from giraffes.patterns import spot_pattern
+from lionfish import SwarmNode, strike_pattern
 
-# Create a long-neck connection
-neck = Neck(
-    height=19,  # feet
-    spots=True,
-    gallop_mode="async"
+# Create a node in the swarm
+node = SwarmNode(
+    venom_level=8,  # How aggressively to gossip
+    stripes='tiger',
+    reef='GreatBarrier',  # Swarm namespace
+    async_mode=True
 )
 
-# Use our SpotPattern™ decorator for elegant reaching
-@spot_pattern(pattern="reticulated")
-async def reach_high_branch():
-    try:
-        leaves = await neck.reach("/very/high/endpoint")
-        return f"Munching on {leaves}!"
-    except TooHighException as e:
-        return "Even giraffes have their limits!"
+# Use our strike_pattern decorator for distributed event handling
+@strike_pattern('ambush')
+def on_new_peer(peer):
+    print(f"New peer joined the reef: {peer}")
 
-# Create a distributed herd
-herd = Herd(
-    neck_length="auto",
-    spot_pattern="randomized",
-    browsers=["acacia", "twigs", "leaves"]
-)
+# Join the swarm
+node.join()
 
-# Start grazing your data
-with herd.graze() as grazer:
-    grazer.process_leaves()
+# Broadcast a message to the swarm
+node.gossip('The reef is ours!')
 ```
 
 ## Configuration
 
 ```python
-from giraffes import Config
+from lionfish import SwarmConfig
 
-config = Config(
-    neck_length=16,  # Default height in feet
-    spot_pattern="savanna",  # Load balancing pattern
-    gallop_mode=False,  # Async processing
-    diet=["json", "yaml", "xml"]  # Supported data formats
+config = SwarmConfig(
+    venom_level=5,  # Gossip frequency
+    stripes='zebra',  # Node identity pattern
+    reef='Atlantic',  # Swarm namespace
+    diet=['json', 'protobuf', 'coral']  # Supported data formats
 )
 ```
 
 ## Advanced Usage
 
-### Neck-based Context Managers
+### Contextual Swarm Management
 
 ```python
-from giraffes import stretch
+from lionfish import swarm_context
 
-with stretch(height=19) as neck:
-    # Automatically handles neck stretching and retraction
-    data = neck.browse("high_branch_data")
+with swarm_context(reef='Caribbean', venom_level=10) as node:
+    # Node automatically joins and leaves the swarm
+    node.gossip('Lionfish party at my place!')
 ```
 
-### Herd Synchronization
+### Synchronized Swarming
 
 ```python
-from giraffes import Herd
-from giraffes.patterns import synchronized_grazing
+from lionfish import Swarm, synchronized_swimming
 
-herd = Herd(size=5)
-with synchronized_grazing(herd):
-    # All giraffes in the herd will coordinate their data access
-    herd.distribute_load()
+swarm = Swarm(size=50)
+with synchronized_swimming(swarm):
+    # All lionfish coordinate their state
+    swarm.achieve_consensus()
 ```
 
 ## Common Exceptions
 
-- `TooHighException`: Even giraffes can't reach everything
-- `NeckStrainError`: Remember to stretch your neck gradually
-- `HerdStampede`: Too many concurrent requests
-- `AcaciaNotFound`: Required resource not found at specified height
+- `TooVenomousError`: Your gossip is overwhelming the reef (network flood).
+- `SpineTangleException`: Message loops detected (check your topology!).
+- `ReefOverrun`: Too many nodes, not enough coral (resource exhaustion).
+- `PredatorDetected`: Malicious or rogue node detected in the swarm.
 
 ## Contributing
 
-We welcome contributions from all tall animals! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+We welcome contributions from all aquatic creatures (and even a few land-dwellers). Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
 
-MIT © 2024 Giraffe Technologies
+MIT © 2024 Lionfish Technologies
 
 ## Warning
 
 Side effects may include:
 
-- Unexpected growth in your application stack
-- Increased visibility across networks
-- Sudden cravings for acacia leaves
-- Tendency to look down on shorter architectures
+- Unintended invasions of other networks
+- Sudden cravings for distributed hash tables
+- Increased codebase toxicity (in a good way?)
+- Tendency to show off your stripes in peer reviews
+- Swarm intelligence emerging at 3am
 
 ---
-*This is a playful README created for demonstration purposes. No actual giraffes were involved in the development of this fictional package.*
+
+*This README is for demonstration purposes. No actual lionfish (or developers) were stung in the making of this package. Remember: invasive features can be beautiful, but use responsibly!*
