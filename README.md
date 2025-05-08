@@ -1,119 +1,118 @@
-# 🦒 giraffes
+# 🦁🐟 lionfish
 
-[![PyPI version](https://img.shields.io/badge/pypi-v0.19.4-blue.svg)](https://pypi.org/project/giraffes/)
-[![Python versions](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue)](https://pypi.org/project/giraffes/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm version](https://img.shields.io/badge/npm-v1.0.0-orange.svg)](https://npmjs.com/package/lionfish)
+[![JavaScript](https://img.shields.io/badge/language-JavaScript-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-`giraffes` is a Python library for reaching high-level resources in your application stack with elegant, long-necked abstractions.
+`lionfish` is a JavaScript library for navigating the coral reefs of your codebase with the grace (and danger) of a lionfish. Whether you're injecting venomous features or just want to look fabulous, `lionfish` brings exotic power to your next project.
 
 ## Features
 
-- 🦒 **Tall Stack Navigation**: Access resources up to 19 feet high in your architecture
-- 🔄 **SpotPattern™ Decorators**: Beautiful pattern-matching for distributed systems
-- 🌳 **Acacia-Safe Type Checking**: Herbivorous type validation that won't bite
-- 🏃 **GallopMode**: Async support with speeds up to 35mph
-- 🦒 **Herd Management**: Built-in clustering with neck-based load balancing
+- 🦁 **Venomous Hooks**: Inject side effects with the elegance of a lionfish spine (handle with care!).
+- 🌊 **Reef Navigation**: Traverse complex data structures like a lionfish weaving through coral.
+- 🐠 **Invasive Algorithms**: Spread your logic efficiently—sometimes too efficiently (watch out for infinite loops!).
+- 🎨 **Striking Patterns**: Decorators and utilities as beautiful (and dangerous) as a lionfish's stripes.
+- 🦑 **Ecosystem Awareness**: Built-in support for detecting and avoiding "predators" (a.k.a. breaking changes).
 
 ## Installation
 
 ```bash
-pip install giraffes
+npm install lionfish
 ```
 
 ## Quick Start
 
-```python
-from giraffes import Neck, Herd
-from giraffes.patterns import spot_pattern
+```javascript
+import { Spine, Reef, strikePattern } from 'lionfish';
 
-# Create a long-neck connection
-neck = Neck(
-    height=19,  # feet
-    spots=True,
-    gallop_mode="async"
-)
+// Create a venomous hook
+const spine = new Spine({
+  venomLevel: 11, // Out of 10, because why not?
+  pattern: 'zebra',
+  asyncMode: true
+});
 
-# Use our SpotPattern™ decorator for elegant reaching
-@spot_pattern(pattern="reticulated")
-async def reach_high_branch():
-    try:
-        leaves = await neck.reach("/very/high/endpoint")
-        return f"Munching on {leaves}!"
-    except TooHighException as e:
-        return "Even giraffes have their limits!"
+// Use our strikePattern decorator for stylish function wrapping
+@strikePattern('ambush')
+async function ambushPrey(target) {
+  try {
+    return await spine.inject(target);
+  } catch (e) {
+    return "Ouch! That stings.";
+  }
+}
 
-# Create a distributed herd
-herd = Herd(
-    neck_length="auto",
-    spot_pattern="randomized",
-    browsers=["acacia", "twigs", "leaves"]
-)
+// Navigate your data reef
+const reef = new Reef({
+  complexity: 'coral-maze',
+  inhabitants: ['shrimp', 'crab', 'unwary developer']
+});
 
-# Start grazing your data
-with herd.graze() as grazer:
-    grazer.process_leaves()
+reef.explore();
 ```
 
 ## Configuration
 
-```python
-from giraffes import Config
+```javascript
+import { Config } from 'lionfish';
 
-config = Config(
-    neck_length=16,  # Default height in feet
-    spot_pattern="savanna",  # Load balancing pattern
-    gallop_mode=False,  # Async processing
-    diet=["json", "yaml", "xml"]  # Supported data formats
-)
+const config = new Config({
+  venomLevel: 7, // How spicy do you want your hooks?
+  pattern: 'tiger', // Choose your stripes
+  asyncMode: false, // Synchronous swimming
+  diet: ['arrays', 'objects', 'JSON'] // What your lionfish likes to consume
+});
 ```
 
 ## Advanced Usage
 
-### Neck-based Context Managers
+### Spine-based Context Managers
 
-```python
-from giraffes import stretch
+```javascript
+import { stretch } from 'lionfish';
 
-with stretch(height=19) as neck:
-    # Automatically handles neck stretching and retraction
-    data = neck.browse("high_branch_data")
+stretch({ venomLevel: 10 }, (spine) => {
+  // Safely inject and retract your spines
+  spine.sting('predator');
+});
 ```
 
-### Herd Synchronization
+### Reef Synchronization
 
-```python
-from giraffes import Herd
-from giraffes.patterns import synchronized_grazing
+```javascript
+import { Reef, synchronizedSwimming } from 'lionfish';
 
-herd = Herd(size=5)
-with synchronized_grazing(herd):
-    # All giraffes in the herd will coordinate their data access
-    herd.distribute_load()
+const reef = new Reef({ size: 12 });
+synchronizedSwimming(reef, () => {
+  // All lionfish coordinate their movements
+  reef.balanceEcosystem();
+});
 ```
 
 ## Common Exceptions
 
-- `TooHighException`: Even giraffes can't reach everything
-- `NeckStrainError`: Remember to stretch your neck gradually
-- `HerdStampede`: Too many concurrent requests
-- `AcaciaNotFound`: Required resource not found at specified height
+- `TooVenomousError`: Even lionfish have their limits (and so does your stack).
+- `SpineTangleException`: Don't cross your hooks!
+- `ReefOverrun`: Too many invasive features at once.
+- `PredatorDetected`: Something big just entered your codebase.
 
 ## Contributing
 
-We welcome contributions from all tall animals! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+We welcome contributions from all aquatic creatures (and even a few land-dwellers). Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
 
-MIT © 2024 Giraffe Technologies
+MIT © 2024 Lionfish Technologies
 
 ## Warning
 
 Side effects may include:
 
-- Unexpected growth in your application stack
-- Increased visibility across networks
-- Sudden cravings for acacia leaves
-- Tendency to look down on shorter architectures
+- Unintended invasions of other codebases
+- Sudden cravings for crustaceans
+- Increased codebase toxicity (in a good way?)
+- Tendency to show off your stripes in code reviews
 
 ---
-*This is a playful README created for demonstration purposes. No actual giraffes were involved in the development of this fictional package.*
+
+*This README is for demonstration purposes. No actual lionfish (or developers) were stung in the making of this package. Remember: invasive features can be beautiful, but use responsibly!*
