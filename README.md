@@ -1,119 +1,133 @@
-# 🦒 giraffes
+# 🦩 flamingos
 
-[![PyPI version](https://img.shields.io/badge/pypi-v0.19.4-blue.svg)](https://pypi.org/project/giraffes/)
-[![Python versions](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue)](https://pypi.org/project/giraffes/)
+[![Go Reference](https://img.shields.io/badge/go-docs-blue.svg)](https://pkg.go.dev/flamingos)
+[![Go Version](https://img.shields.io/badge/go-1.18%2B-pink)](https://golang.org/dl/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-`giraffes` is a Python library for reaching high-level resources in your application stack with elegant, long-necked abstractions.
+`flamingos` is a Go library for gracefully balancing your application logic with elegant, one-legged abstractions and vibrant concurrency.
 
 ## Features
 
-- 🦒 **Tall Stack Navigation**: Access resources up to 19 feet high in your architecture
-- 🔄 **SpotPattern™ Decorators**: Beautiful pattern-matching for distributed systems
-- 🌳 **Acacia-Safe Type Checking**: Herbivorous type validation that won't bite
-- 🏃 **GallopMode**: Async support with speeds up to 35mph
-- 🦒 **Herd Management**: Built-in clustering with neck-based load balancing
+- 🦩 **One-Legged Load Balancing**: Stand tall and stable on a single goroutine or process
+- 🌸 **FeatherPattern™ Decorators**: Beautiful pattern-matching for distributed flocks
+- 🦢 **Wetland-Safe Type Checking**: Gentle type validation that won't ruffle feathers
+- 🏊 **WadeMode**: Async support for shallow and deep data pools
+- 🦩 **Flock Management**: Built-in clustering with synchronized head-turning
 
 ## Installation
 
 ```bash
-pip install giraffes
+go get github.com/flamingo-tech/flamingos
 ```
 
 ## Quick Start
 
-```python
-from giraffes import Neck, Herd
-from giraffes.patterns import spot_pattern
+```go
+package main
 
-# Create a long-neck connection
-neck = Neck(
-    height=19,  # feet
-    spots=True,
-    gallop_mode="async"
+import (
+    "fmt"
+    "github.com/flamingo-tech/flamingos"
+    "github.com/flamingo-tech/flamingos/patterns"
 )
 
-# Use our SpotPattern™ decorator for elegant reaching
-@spot_pattern(pattern="reticulated")
-async def reach_high_branch():
-    try:
-        leaves = await neck.reach("/very/high/endpoint")
-        return f"Munching on {leaves}!"
-    except TooHighException as e:
-        return "Even giraffes have their limits!"
+func main() {
+    // Create a balanced leg connection
+    leg := flamingos.NewLeg(4, flamingos.WithPinkness(10), flamingos.WithWadeMode(true))
 
-# Create a distributed herd
-herd = Herd(
-    neck_length="auto",
-    spot_pattern="randomized",
-    browsers=["acacia", "twigs", "leaves"]
-)
+    // Use our FeatherPattern™ decorator for elegant filtering
+    patterns.FeatherPattern("greater", func() error {
+        shrimp, err := leg.Scoop("/shallow/water/shrimp")
+        if err != nil {
+            if err == flamingos.ErrTooDeep {
+                fmt.Println("Even flamingos have their limits!")
+                return nil
+            }
+            return err
+        }
+        fmt.Printf("Nibbling on %v!\n", shrimp)
+        return nil
+    })
 
-# Start grazing your data
-with herd.graze() as grazer:
-    grazer.process_leaves()
+    // Create a distributed flock
+    flock := flamingos.NewFlock(
+        flamingos.WithLegLengthAuto(),
+        flamingos.WithFeatherPattern("randomized"),
+        flamingos.WithBrowsers([]string{"algae", "shrimp", "plankton"}),
+    )
+
+    // Start wading through your data
+    flock.Wade(func(wader *flamingos.Wader) {
+        wader.ProcessShrimp()
+    })
+}
 ```
 
 ## Configuration
 
-```python
-from giraffes import Config
+```go
+import "github.com/flamingo-tech/flamingos"
 
-config = Config(
-    neck_length=16,  # Default height in feet
-    spot_pattern="savanna",  # Load balancing pattern
-    gallop_mode=False,  # Async processing
-    diet=["json", "yaml", "xml"]  # Supported data formats
-)
+config := flamingos.Config{
+    LegLength:      3, // Default height in feet
+    FeatherPattern: "lagoon", // Load balancing pattern
+    WadeMode:       false, // Async processing
+    Diet:           []string{"json", "yaml", "csv"}, // Supported data formats
+}
 ```
 
 ## Advanced Usage
 
-### Neck-based Context Managers
+### Leg-based Context Managers
 
-```python
-from giraffes import stretch
+```go
+import "github.com/flamingo-tech/flamingos"
 
-with stretch(height=19) as neck:
-    # Automatically handles neck stretching and retraction
-    data = neck.browse("high_branch_data")
+flamingos.Balance(5, func(leg *flamingos.Leg) {
+    // Automatically handles leg balancing and retraction
+    data := leg.Filter("shallow_water_data")
+    fmt.Println(data)
+})
 ```
 
-### Herd Synchronization
+### Flock Synchronization
 
-```python
-from giraffes import Herd
-from giraffes.patterns import synchronized_grazing
+```go
+import (
+    "github.com/flamingo-tech/flamingos"
+    "github.com/flamingo-tech/flamingos/patterns"
+)
 
-herd = Herd(size=5)
-with synchronized_grazing(herd):
-    # All giraffes in the herd will coordinate their data access
-    herd.distribute_load()
+flock := flamingos.NewFlock(flamingos.WithSize(7))
+patterns.SynchronizedWading(flock, func() {
+    // All flamingos in the flock will coordinate their data access
+    flock.DistributeLoad()
+})
 ```
 
-## Common Exceptions
+## Common Errors
 
-- `TooHighException`: Even giraffes can't reach everything
-- `NeckStrainError`: Remember to stretch your neck gradually
-- `HerdStampede`: Too many concurrent requests
-- `AcaciaNotFound`: Required resource not found at specified height
+- `ErrTooDeep`: Even flamingos can't reach everything
+- `ErrLegCramp`: Remember to switch legs occasionally
+- `ErrFlockPanic`: Too many concurrent requests
+- `ErrAlgaeNotFound`: Required resource not found in the lagoon
 
 ## Contributing
 
-We welcome contributions from all tall animals! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+We welcome contributions from all flamboyant birds! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
 
-MIT © 2024 Giraffe Technologies
+MIT © 2024 Flamingo Technologies
 
 ## Warning
 
 Side effects may include:
 
-- Unexpected growth in your application stack
-- Increased visibility across networks
-- Sudden cravings for acacia leaves
-- Tendency to look down on shorter architectures
+- Sudden urge to stand on one leg
+- Increased elegance in your codebase
+- Pinker code reviews
+- Tendency to flock with other developers
 
 ---
-*This is a playful README created for demonstration purposes. No actual giraffes were involved in the development of this fictional package.*
+*This is a playful README created for demonstration purposes. No actual flamingos were involved in the development of this fictional package.*
