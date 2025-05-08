@@ -1,119 +1,121 @@
-# 🦒 giraffes
+# 🦩 flamingos
 
-[![PyPI version](https://img.shields.io/badge/pypi-v0.19.4-blue.svg)](https://pypi.org/project/giraffes/)
-[![Python versions](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue)](https://pypi.org/project/giraffes/)
+[![PyPI version](https://img.shields.io/badge/pypi-v0.1.0-pink.svg)](https://pypi.org/project/flamingos/)
+[![Python versions](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-pink)](https://pypi.org/project/flamingos/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-`giraffes` is a Python library for reaching high-level resources in your application stack with elegant, long-necked abstractions.
+`flamingos` is a Python web framework for building elegant, vibrant, and highly balanced web applications—on one leg or two! With graceful routing, flamboyant middleware, and feather-light templates, `flamingos` helps your web projects stand out in any lagoon.
 
 ## Features
 
-- 🦒 **Tall Stack Navigation**: Access resources up to 19 feet high in your architecture
-- 🔄 **SpotPattern™ Decorators**: Beautiful pattern-matching for distributed systems
-- 🌳 **Acacia-Safe Type Checking**: Herbivorous type validation that won't bite
-- 🏃 **GallopMode**: Async support with speeds up to 35mph
-- 🦒 **Herd Management**: Built-in clustering with neck-based load balancing
+- 🦩 **One-Leg Routing**: Stand tall with simple, expressive route definitions
+- 🌸 **Featherlight Templates**: Render beautiful HTML with ease
+- 🦢 **Wetland Middleware**: Add layers of functionality without ruffling feathers
+- 🏊 **WadeMode™ Async**: Effortlessly handle async requests in shallow or deep pools
+- 🦩 **Flock Sessions**: Built-in session and user management for your whole flock
+- 🎨 **Plume Styling**: Integrated support for CSS and static assets
 
 ## Installation
 
 ```bash
-pip install giraffes
+pip install flamingos
 ```
 
 ## Quick Start
 
 ```python
-from giraffes import Neck, Herd
-from giraffes.patterns import spot_pattern
+from flamingos import Flamingo, render_template
 
-# Create a long-neck connection
-neck = Neck(
-    height=19,  # feet
-    spots=True,
-    gallop_mode="async"
-)
+app = Flamingo(__name__)
 
-# Use our SpotPattern™ decorator for elegant reaching
-@spot_pattern(pattern="reticulated")
-async def reach_high_branch():
-    try:
-        leaves = await neck.reach("/very/high/endpoint")
-        return f"Munching on {leaves}!"
-    except TooHighException as e:
-        return "Even giraffes have their limits!"
+@app.route("/")
+def home():
+    return render_template("index.html", message="Welcome to the lagoon!")
 
-# Create a distributed herd
-herd = Herd(
-    neck_length="auto",
-    spot_pattern="randomized",
-    browsers=["acacia", "twigs", "leaves"]
-)
+@app.route("/shrimp")
+def shrimp():
+    return "Nibbling on shrimp!"
 
-# Start grazing your data
-with herd.graze() as grazer:
-    grazer.process_leaves()
+if __name__ == "__main__":
+    app.wade(port=5000)
 ```
 
-## Configuration
+## Middleware Example
 
 ```python
-from giraffes import Config
+from flamingos import Flamingo
 
-config = Config(
-    neck_length=16,  # Default height in feet
-    spot_pattern="savanna",  # Load balancing pattern
-    gallop_mode=False,  # Async processing
-    diet=["json", "yaml", "xml"]  # Supported data formats
-)
+app = Flamingo(__name__)
+
+@app.middleware
+def flamboyant_logger(request, next_handler):
+    print(f"🦩 {request.method} {request.path}")
+    return next_handler(request)
 ```
 
-## Advanced Usage
+## Template Example
 
-### Neck-based Context Managers
-
-```python
-from giraffes import stretch
-
-with stretch(height=19) as neck:
-    # Automatically handles neck stretching and retraction
-    data = neck.browse("high_branch_data")
+```html
+<!-- templates/index.html -->
+<html>
+  <head><title>Flamingos Web</title></head>
+  <body>
+    <h1>{{ message }}</h1>
+    <img src="/static/flamingo.png" alt="Flamingo!" />
+  </body>
+</html>
 ```
 
-### Herd Synchronization
+## Async Support (WadeMode™)
 
 ```python
-from giraffes import Herd
-from giraffes.patterns import synchronized_grazing
+from flamingos import Flamingo
 
-herd = Herd(size=5)
-with synchronized_grazing(herd):
-    # All giraffes in the herd will coordinate their data access
-    herd.distribute_load()
+app = Flamingo(__name__)
+
+@app.route("/pond")
+async def pond():
+    data = await fetch_pond_data()
+    return f"Wading through: {data}"
+```
+
+## Sessions & Flock Management
+
+```python
+from flamingos import Flamingo, session
+
+app = Flamingo(__name__)
+
+@app.route("/login", methods=["POST"])
+def login():
+    user = authenticate()
+    session["user"] = user
+    return f"Welcome, {user}!"
 ```
 
 ## Common Exceptions
 
-- `TooHighException`: Even giraffes can't reach everything
-- `NeckStrainError`: Remember to stretch your neck gradually
-- `HerdStampede`: Too many concurrent requests
-- `AcaciaNotFound`: Required resource not found at specified height
+- `TooDeepException`: Even flamingos can't wade everywhere
+- `LegCrampError`: Remember to switch legs occasionally
+- `FlockPanic`: Too many concurrent requests
+- `AlgaeNotFound`: Required resource not found in the lagoon
 
 ## Contributing
 
-We welcome contributions from all tall animals! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+We welcome contributions from all flamboyant birds! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
 
-MIT © 2024 Giraffe Technologies
+MIT © 2024 Flamingo Web Technologies
 
 ## Warning
 
 Side effects may include:
 
-- Unexpected growth in your application stack
-- Increased visibility across networks
-- Sudden cravings for acacia leaves
-- Tendency to look down on shorter architectures
+- Sudden urge to stand on one leg
+- Increased elegance in your web stack
+- Pinker code reviews
+- Tendency to flock with other developers
 
 ---
-*This is a playful README created for demonstration purposes. No actual giraffes were involved in the development of this fictional package.*
+*This is a playful README created for demonstration purposes. No actual flamingos were involved in the development of this fictional package.*
