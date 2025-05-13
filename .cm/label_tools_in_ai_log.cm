@@ -6,26 +6,8 @@ manifest:
 automations:
   label_tools_in_ai_log:
     if:
-      - {{ files | match(term='.github/ai-log.txt') | some }}
+      - {{ files | includes(term='ai-log.txt') }}
     run:
       - action: add-labels@v1
         args:
-          labels: {{ ai_log_tools }}
-
-# Only label for unique new tool entries in the PR's diff
-ai_log_tools: >-
-  {{
-    source.diff.files
-    | filter(attr='new_file', term='.github/ai-log.txt')
-    | map(attr='diff')
-    | join('\n')
-    | splitlines
-    | filter(regex=r'^\+[^+].*')           # Only added lines, not diff headers
-    | map('replace', '+', '')              # Remove leading '+'
-    | map('trim')                          # Remove whitespace
-    | reject(term='')                      # Remove empty lines
-    | map('split', ' ')                    # Split each line by space
-    | map('1')                             # Get the tool name (second item)
-    | unique
-    | map('format', 'tool:{}')
-  }} 
+          labels: ai-log-present
