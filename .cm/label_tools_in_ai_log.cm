@@ -1,0 +1,16 @@
+-*- mode: yaml -*-
+
+manifest:
+  version: 1.0
+
+automations:
+  label_tools_in_ai_log:
+    if:
+      - {{ files | match(term='.github/ai-log.txt') | some }}
+    run:
+      - action: add-labels@v1
+        args:
+          labels: {{ ai_log_tools }}
+
+# Custom expression to extract unique tool names from the ai-log
+ai_log_tools: {{ '.github/ai-log.txt' | readFile() | splitlines | map('split', ' ') | map('1') | unique | map('format', 'tool:{}') }} 
